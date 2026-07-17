@@ -8,6 +8,9 @@ import Profile from './pages/Profile'
 import CollectionPage from './pages/CollectionPage'
 import ProductsDetails from './components/Products/ProductsDetails'
 import CheckOut from './components/Cart/Checkout'
+import OrderConfirmationPage from './pages/OrderConfirmationPage'
+import OrderDetails from './pages/OrderDetailsPage'
+import MyOrders from './pages/MyOrdersPage'
 
 function App() {
   return (
@@ -27,6 +30,9 @@ function App() {
           <Route path='collection/:collection' element={<CollectionPage/>}/>
           <Route path='product/:id' element={<ProductsDetails/>}/>
           <Route path='checkout' element={<CheckOut/>}/>
+          <Route path='order-confirmation' element={<OrderConfirmationPage/>}/>
+          <Route path='order/:id' element={<OrderDetails/>}/>
+          <Route path='my-orders' element={<MyOrders/>}/>
 
 
         
