@@ -11,6 +11,14 @@ import CheckOut from './components/Cart/Checkout'
 import OrderConfirmationPage from './pages/OrderConfirmationPage'
 import OrderDetails from './pages/OrderDetailsPage'
 import MyOrders from './pages/MyOrdersPage'
+import AdminLayout from './components/Layout/AdminLayout '
+import AdminHomePage from './pages/AdminHomePage'
+import UserManagement from './components/Admin/UserManagement'
+import ProductsManagement from './components/Admin/ProductsManagement'
+import EditProduct from './components/Admin/EditProduct'
+import AddProduct from './components/Admin/AddProduct'
+import OrdersManagement from './components/Admin/OrdersManagement'
+
 
 function App() {
   return (
@@ -39,9 +47,22 @@ function App() {
         </Route>
         
         {/* Admin Layout Router */}
-        <Route>
-          {/* Add admin routes here */}
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<AdminHomePage />} />
+
+          <Route path="users" element={<UserManagement />} />
+
+          <Route path="products" element={<ProductsManagement />} />
+
+          <Route path="products/edit/:id" element={<EditProduct />} />
+
+          {/* Later */}
+          <Route path="products/new" element={<AddProduct />} />
+          <Route path="orders" element={<OrdersManagement />} />
         </Route>
+
+
+
       </Routes>
     </BrowserRouter>
   )
