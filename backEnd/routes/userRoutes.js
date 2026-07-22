@@ -72,7 +72,6 @@ router.post("/login", async (req, res)=>{
         }
 
         const isMatch= await user.matchPassword(password, user.password)
-        console.log(isMatch, "Match result", password, user.password)
         
         if(!isMatch){
             return res.status(401).json({
