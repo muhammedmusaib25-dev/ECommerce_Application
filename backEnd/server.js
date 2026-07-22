@@ -24,6 +24,7 @@ app.use(cors())
 app.use("/api/users", userRoutes)
 
 app.get("/",(req,res)=>{
+    console.log("[info] backend is functinal")
     res.send("Welcome to rabbit API")
 })
 
